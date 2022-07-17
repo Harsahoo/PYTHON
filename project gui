@@ -1,0 +1,49 @@
+from tkinter import *
+from tkinter import colorchooser
+
+
+def click():
+    color=colorchooser.askcolor()
+    print(color)
+    colorhex=color[1]
+    window.config(bg=colorhex)
+
+
+
+window = Tk()
+window.geometry("500x500")
+window.title("harsh sahu project 1")
+
+#icon = PhotoImage(file='datascience-og.jpg')
+#window.iconphoto(True, icon)
+
+
+
+button = Button(text='click me',command= click)
+button.pack()
+
+text = Text(window)
+text.insert(INSERT, "Hello.....")
+text.insert(END, "Bye Bye.....")
+text.pack()
+
+text.tag_add("here", "1.0", "1.4")
+text.tag_add("start", "1.8", "1.13")
+text.tag_config("here", background="yellow", foreground="blue")
+text.tag_config("start", background="black", foreground="green")
+  
+
+
+CheckVar1 = IntVar()
+CheckVar2 = IntVar()
+C1 = Checkbutton(window, text = "Music", variable = CheckVar1, \
+                 onvalue = 1, offvalue = 0, height=5, \
+                 width = 20)
+C2 = Checkbutton(window, text = "Video", variable = CheckVar2, \
+                 onvalue = 1, offvalue = 0, height=5, \
+                 width = 20)
+C1.pack()
+C2.pack()  
+
+window.mainloop()  
+
